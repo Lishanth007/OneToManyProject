@@ -1,9 +1,11 @@
 package Mapping;
 
-import java.util.List;
+import java.util.*;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -11,7 +13,9 @@ public class Ownership {
 	@Id
 	private int ownerId;
 	private String ownerName;
-	@OneToMany
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name = "owner_ids")
 	private List<Products> ownerOfProduct;
 
 	public int getOwnerId() {

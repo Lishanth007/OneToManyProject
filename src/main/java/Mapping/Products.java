@@ -34,5 +34,4 @@ public class Products {
 		this.productUserCount = productUserCount;
 	}
 
-	
 }
